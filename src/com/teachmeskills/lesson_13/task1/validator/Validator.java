@@ -12,6 +12,7 @@ public class Validator {
             throw new WrongLoginException("Login must be less than 20 characters long and must not contain spaces.");
         }
 
+        //!password.matches(".*\\d.*") OR !containsDigit(password)
         if (password.length() >= 20 || password.contains(" ") || !containsDigit(password) || !password.equals(confirmPassword)) {
             throw new WrongPasswordException("The password must be less than 20 characters long, must not contain spaces, must contain at least one number, and must match the confirmation.");
         }
